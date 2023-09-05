@@ -58,8 +58,6 @@
           package. Users CANNOT rely on this file being available, or stored in
           this location. Nor can they rely on the existence of the macro.
   -->
-  <!-- create link fixed to the "world" -->
-  <link name="world"/>
 
   <!-- Add URDF transmission elements (for ros_control) -->
   <!--<xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />-->
@@ -199,12 +197,6 @@
       <inertia ixx="9.890410052167731e-05" ixy="0.0" ixz="0.0" iyy="9.890410052167731e-05" iyz="0.0" izz="0.0001321171875"/>
     </inertial>
   </link>
-  <!-- base_joint fixes base_link to the environment -->
-  <joint name="base_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
   <!-- joints - main serial chain -->
   <joint name="base_link-base_link_inertia" type="fixed">
     <parent link="base_link"/>
